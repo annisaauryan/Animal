@@ -1,0 +1,27 @@
+// Класс для представления животного
+class Animal(val name: String, val species: String) {
+  def makeSound(): Unit = {
+    println(s"$name издает звук")
+  }
+}
+
+// Класс-потомок для представления кошки
+class Cat(name: String) extends Animal(name, "Кошка") {
+  override def makeSound(): Unit = {
+    println(s"$name мяукает")
+  }
+}
+
+// Класс-потомок для представления собаки
+class Dog(name: String) extends Animal(name, "Собака") {
+  override def makeSound(): Unit = {
+    println(s"$name гавкает")
+  }
+}
+
+// Создаем экземпляры животных и вызываем методы
+val cat = new Cat("Мурзик")
+val dog = new Dog("Бобик")
+
+cat.makeSound()
+dog.makeSound()
